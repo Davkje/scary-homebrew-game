@@ -1,0 +1,262 @@
+// KARAKTÄR
+
+@keyframes blink-background {
+  0% {
+    background-color: black;
+  }
+
+  50% {
+    box-shadow: 0 2px 2px rgba(58, 58, 58, 0.17);
+    scale: 1.4;
+  }
+
+  100% {
+    background-color: black;
+  }
+}
+
+@keyframes blink-color {
+  0% {
+    color: black;
+  }
+
+  50% {
+    text-shadow: 0 2px 4px rgba(21, 21, 21, 0.1);
+    scale: 1.2;
+  }
+
+  100% {
+    color: black;
+  }
+}
+
+.mid-wrapper {
+  width: 100%;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-wrapper {
+  width: 100%;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  p {
+    text-align: left;
+  }
+}
+
+.class-header {
+  display: flex;
+}
+
+.header-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  .material-symbols-outlined {
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: black;
+    transition: color .3s ease-in-out;
+  }
+}
+
+.abilitys {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+
+  .ability-container {
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 52px;
+
+    .ability {
+      position: relative;
+      border: solid black 3px;
+      border-radius: .5rem;
+      width: 52px;
+      aspect-ratio: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .reminder {
+        position: absolute;
+        right: -9px;
+        top: -6px;
+        width: 15px;
+        height: 15px;
+        background-color: rgb(0, 0, 0);
+        border-radius: 100%;
+      }
+
+      .reminder:hover {
+        cursor: pointer;
+      }
+
+      .reminder.blink {
+        animation: blink-background 0.4s cubic-bezier(0.175, 0.6, 0.32, 2);
+      }
+    }
+  }
+}
+
+.special:hover {
+  cursor: pointer;
+}
+
+.special-title.blink {
+  animation: blink-color 0.4s cubic-bezier(0.175, 0.6, 0.32, 2);
+}
+
+strong {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.stress {
+  display: flex;
+  width: 100%;
+  height: 50px;
+  gap: .25rem;
+
+  button {
+    height: 100%;
+    min-width: 50px;
+    margin: 0;
+    padding: .2rem .5rem;
+    border: solid black 3px;
+    border-radius: .5rem;
+  }
+
+  .stress-container {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: .25rem;
+    border: solid black 3px;
+    border-radius: .5rem;
+    padding: .25rem;
+    margin: 0;
+
+    .stress-point {
+      background-color: rgb(220, 220, 220);
+      border-radius: .25rem;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .stress-point.filled {
+      background-color: black;
+    }
+  }
+}
+
+.wounds {
+  width: 100%;
+}
+
+.gear {
+  width: 100%;
+}
+
+textarea {
+  width: 100%;
+  height: auto;
+  border: none;
+  border-bottom: solid black 3px;
+  text-align: left;
+  padding: 6px 0 4px 0;
+  margin: 0;
+  resize: none;
+  overflow: hidden;
+  line-height: 1.5rem;
+}
+
+.clickable {
+  cursor: pointer;
+  transition: .5s background-color ease-in-out, .5s color;
+}
+
+.struck {
+  color: grey;
+  transition: .5s background-color ease-in-out, .5s color;
+
+  .material-symbols-outlined {
+    color: grey;
+  }
+}
+
+.delete-button {
+  color: grey;
+  border-color: white;
+  font-size: 1rem;
+  border-radius: .5rem;
+
+  &:hover {
+    color: white;
+    background-color: rgb(255, 21, 21);
+    transition: .5s background-color ease-in-out, .5s color;
+  }
+}
+
+.class-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+
+  .arrow {
+    transition: transform 0.3s ease;
+    position: absolute;
+    right: -24px;
+    top: 5px;
+  }
+
+  .arrow.open {
+    transform: rotate(180deg);
+  }
+}
+
+.details-wrapper {
+  width: 100%;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+  transition: max-height 1s ease-in-out;
+
+  .details {
+    // padding-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+
+.quote {
+  color: rgb(85, 85, 85);
+  margin: .5rem 0;
+}

@@ -1,0 +1,149 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+  -webkit-tap-highlight-color: transparent;
+}
+
+:root {
+  font-family: Kadwa, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: rgb(0, 0, 0);
+  background-color: #ffffff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: black;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: grey;
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label {
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: 1.8rem;
+  // margin: .2rem;
+  font-weight: bold;
+}
+
+h2 {
+  margin-top: .5rem;
+  font-size: 1.2rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+label {
+  font-size: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+input,
+select,
+textarea {
+  color: black;
+  background: white;
+  background-color: white;
+  text-transform: uppercase;
+  border: solid black 2px;
+  font-size: clamp(1rem, 4vw, 1.2rem);
+  padding: .2rem;
+  font-family: Kadwa, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  margin-top: 1rem;
+  accent-color: rgb(0, 0, 0);
+}
+
+button {
+  color: black;
+  background: white;
+  text-transform: uppercase;
+  border: 2px solid black;
+  padding: 0.6em 1.2em;
+  margin-top: .5rem;
+  font-size: 1.1em;
+  font-family: inherit;
+  accent-color: rgb(0, 0, 0);
+  border-radius: 0;
+  transition: border-color 0.25s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgb(220, 220, 220);
+  }
+}
+
+.btn {
+  color: black;
+  background: white;
+  text-transform: uppercase;
+  border: 2px solid black;
+  padding: 0.6em 1.2em;
+  margin-top: .5rem;
+  font-size: 1.1em;
+  font-family: inherit;
+  accent-color: rgb(0, 0, 0);
+  border-radius: 0;
+  transition: border-color 0.25s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgb(220, 220, 220);
+    color: black;
+  }
+}
+// 
+
+a:focus,
+a:focus-visible,
+button:focus,
+button:focus-visible input:focus,
+input:focus-visible,
+textarea:focus,
+textarea:focus,
+select:focus,
+select:focus {
+  outline: auto 4px rgb(43, 77, 212);
+  box-shadow: none;
+  border-color: rgb(0, 0, 0);
+}
+
+ul {
+  padding: 0;
+
+  li {
+    list-style: none;
+  }
+}
