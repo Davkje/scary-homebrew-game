@@ -19,18 +19,7 @@ export function buildCharacter(options: CharacterOptions): Character {
 	}
 
 	// Starta en tom lista med alla abilities som finns i spelet (valfritt steg om du vill vara komplett)
-	const abilityMap: Record<AbilityName, number> = {
-		Göra: 0,
-		Känna: 0,
-		Snacka: 0,
-		Klura: 0,
-		Tåla: 0,
-	};
-
-	// Lägg på klassens abilities
-	for (const ability of rpgClass.abilities) {
-		abilityMap[ability.name] += ability.value;
-	}
+	const abilityMap: Record<AbilityName, number> = {...rpgClass.abilities};
 
 	// Lägg på spelarens egna val
 	abilityMap[options.bonusTwo] += 2;

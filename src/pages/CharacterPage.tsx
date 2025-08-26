@@ -271,3 +271,9 @@ export const CharacterPage = () => {
 		</>
 	);
 };
+
+// IDEEEEER!!!
+
+// när du klickar på specialare så ändras siffran till den nya siifran lite kort!
+
+// Bonus måste sparas i local storage
