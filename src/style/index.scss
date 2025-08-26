@@ -72,59 +72,47 @@ label {
 }
 
 input,
-select,
-textarea {
+textarea,
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  color: black;
+  background: white;
+  background-color: white;
+  font-family: inherit;
+  text-transform: uppercase;
+  font-size: clamp(1rem, 4vw, 1.2rem);
+  border: none;
+  border-bottom: solid black 3px;
+  border-radius: 0;
+  accent-color: black;
+  padding: .2rem;
+  margin-top: 1rem;
+}
+
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  accent-color: black;
   color: black;
   background: white;
   background-color: white;
   text-transform: uppercase;
-  border: solid black 2px;
-  font-size: clamp(1rem, 4vw, 1.2rem);
-  padding: .2rem;
-  font-family: Kadwa, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  margin-top: 1rem;
-  accent-color: rgb(0, 0, 0);
-}
-
-button {
-  color: black;
-  background: white;
-  text-transform: uppercase;
-  border: 2px solid black;
+  border: 3px solid black;
   padding: 0.6em 1.2em;
   margin-top: .5rem;
   font-size: 1.1em;
   font-family: inherit;
-  accent-color: rgb(0, 0, 0);
-  border-radius: 0;
-  transition: border-color 0.25s;
+  border-radius: 0.5rem;
+  transition: background-color 0.25s;
   cursor: pointer;
 
   &:hover {
     background-color: rgb(220, 220, 220);
   }
 }
-
-.btn {
-  color: black;
-  background: white;
-  text-transform: uppercase;
-  border: 2px solid black;
-  padding: 0.6em 1.2em;
-  margin-top: .5rem;
-  font-size: 1.1em;
-  font-family: inherit;
-  accent-color: rgb(0, 0, 0);
-  border-radius: 0;
-  transition: border-color 0.25s;
-  cursor: pointer;
-
-  &:hover {
-    background-color: rgb(220, 220, 220);
-    color: black;
-  }
-}
-// 
 
 a:focus,
 a:focus-visible,
@@ -138,6 +126,30 @@ select:focus {
   outline: auto 4px rgb(43, 77, 212);
   box-shadow: none;
   border-color: rgb(0, 0, 0);
+}
+
+.btn {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  accent-color: black;
+  color: black;
+  background: white;
+  background-color: white;
+  text-transform: uppercase;
+  border: 3px solid black;
+  padding: 0.6em 1.2em;
+  margin-top: .5rem;
+  font-size: 1.1em;
+  font-family: inherit;
+  border-radius: 0.5rem;
+  transition: background-color 0.25s;
+  cursor: pointer;
+
+  &:hover {
+    color: black;
+    background-color: rgb(220, 220, 220);
+  }
 }
 
 ul {

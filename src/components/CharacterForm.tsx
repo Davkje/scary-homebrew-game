@@ -81,7 +81,7 @@ export const CharacterForm = () => {
 						onChange={(e) => setClassName(e.target.value)}
 						required
 					>
-						<option value="">-</option>
+						<option value=""></option>
 						{RPG_CLASSES.map((cls) => (
 							<option key={cls.name} value={cls.name}>
 								{cls.name}
@@ -97,7 +97,7 @@ export const CharacterForm = () => {
 						onChange={(e) => setBonusTwo(e.target.value)}
 						required
 					>
-						<option value="">-</option>
+						<option value=""></option>
 						{getOptions([bonusOne, flaw]).map((ability) => (
 							<option key={ability} value={ability}>
 								{ability}
@@ -113,7 +113,7 @@ export const CharacterForm = () => {
 						onChange={(e) => setBonusOne(e.target.value)}
 						required
 					>
-						<option value="">-</option>
+						<option value=""></option>
 						{getOptions([bonusTwo, flaw]).map((ability) => (
 							<option key={ability} value={ability}>
 								{ability}
@@ -129,7 +129,7 @@ export const CharacterForm = () => {
 						onChange={(e) => setFlaw(e.target.value)}
 						required
 					>
-						<option value="">-</option>
+						<option value=""></option>
 						{getOptions([bonusTwo, bonusOne]).map((ability) => (
 							<option key={ability} value={ability}>
 								{ability}
