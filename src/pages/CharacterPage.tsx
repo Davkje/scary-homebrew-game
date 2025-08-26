@@ -63,7 +63,7 @@ export const CharacterPage = () => {
 			<div className="mid-wrapper">
 				<h1>{character.name}</h1>
 				<div className="class-header" onClick={() => setDetailsOpen(!detailsOpen)}>
-					<h2>{character.className}</h2>
+					<span className="class-name">{character.className}</span>
 					<span
 						className={`material-symbols-outlined arrow ${detailsOpen ? "open" : ""}`}
 					>

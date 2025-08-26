@@ -17,3 +17,30 @@ form {
   gap: 2rem;
 }
 
+.text-container {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: .5rem;
+  text-align: start;
+  margin: .5rem 0;
+}
+
+.class-info {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+  text-align: start;
+  padding: 1rem;
+  border-radius: .5rem;
+  border: solid black 3px;
+  .quote {
+    margin: 0;
+  }
+}

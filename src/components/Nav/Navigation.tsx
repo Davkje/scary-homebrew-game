@@ -15,6 +15,9 @@ export const Navigation = () => {
 				<li>
 					<NavLink to={"/create"}>Skapa</NavLink>
 				</li>
+				<li>
+					<NavLink to={"/info"}>INFO</NavLink>
+				</li>
 			</ul>
 		</nav>
 	);

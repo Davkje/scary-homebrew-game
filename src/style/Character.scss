@@ -54,6 +54,12 @@
 
 .class-header {
   display: flex;
+
+  .class-name {
+    text-transform: uppercase;
+    margin-top: .5rem;
+    font-size: 1.2rem;
+  }
 }
 
 .header-wrapper {
