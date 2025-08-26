@@ -15,6 +15,7 @@ export type RPGClass = {
 	gear: string;
 	quote: string;
 	special: string;
+	abilities: Record<AbilityName, number>;
 	specialAbility: AbilityName;
 	bonus: string;
 	inspo: string;
@@ -23,12 +24,19 @@ export type RPGClass = {
 export const RPG_CLASSES: RPGClass[] = [
 	{
 		name: "Lagkaptenen",
-		quote: "Tare lugnt, jag fixar biffen!",
-		inspo: "Populär, har körkort och är van att få som hen vill. Charmig, lite självisk, men lojal och ofta den som får folk att följa med på idiotiska idéer. Har inte stött på så mycket motgångar i livet och är redo för fest!",
 		gear: "Bandyklubba, en flaska Jäger & pannlampa",
+		quote: "Tare lugnt, jag fixar biffen!",
 		special: "+1 i Tåla om du försöker skydda någon.",
+		abilities: {
+			Tåla: 0,
+			Snacka: 0,
+			Göra: 0,
+			Klura: 0,
+			Känna: 0,
+		},
 		specialAbility: "Tåla",
 		bonus: "En gång per spel kan du ignorera en skada genom att göra något fysiskt.",
+		inspo: "Populär, har körkort och är van att få som hen vill. Charmig, lite självisk, men lojal och ofta den som får folk att följa med på idiotiska idéer. Har inte stött på så mycket motgångar i livet och är redo för fest!",
 	},
 	{
 		name: "Snyggingen",
@@ -38,6 +46,13 @@ export const RPG_CLASSES: RPGClass[] = [
 		special: "+1 i Snacka när du flörtar eller manipulerar.",
 		specialAbility: "Snacka",
 		bonus: "En gång per spel kan du övertala någon att göra något farligt i ditt ställe genom att flörta eller visa dig genuin och sårbar.",
+		abilities: {
+			Tåla: 0,
+			Snacka: 0,
+			Göra: 0,
+			Klura: 0,
+			Känna: 0,
+		},
 	},
 	{
 		name: "Tuffingen",
@@ -47,6 +62,13 @@ export const RPG_CLASSES: RPGClass[] = [
 		special: "+1 i Göra om du röker eller tuggar tuggummi.",
 		specialAbility: "Göra",
 		bonus: "En gång per spel kan du hota någon så att de backar.",
+		abilities: {
+			Tåla: 0,
+			Snacka: 0,
+			Göra: 0,
+			Klura: 0,
+			Känna: 0,
+		},
 	},
 	{
 		name: "Duktiga",
@@ -56,6 +78,13 @@ export const RPG_CLASSES: RPGClass[] = [
 		special: '+1 i Klura när du börjar meningen med "Faktum är att..."',
 		specialAbility: "Klura",
 		bonus: "En gång per spel kan du motbevisa något övernaturligt och minska stress för alla.",
+		abilities: {
+			Tåla: 0,
+			Snacka: 0,
+			Göra: 0,
+			Klura: 0,
+			Känna: 0,
+		},
 	},
 	{
 		name: "Nörden",
@@ -65,6 +94,13 @@ export const RPG_CLASSES: RPGClass[] = [
 		special: "+1 i Klura när du rabblar fakta först.",
 		specialAbility: "Klura",
 		bonus: "En gång per spel kan du säga “Om inte? ... Såklart!” och be spelledaren om någon viktig information som du listar ut!",
+		abilities: {
+			Tåla: 0,
+			Snacka: 0,
+			Göra: 0,
+			Klura: 0,
+			Känna: 0,
+		},
 	},
 	{
 		name: "Rika",
@@ -74,6 +110,13 @@ export const RPG_CLASSES: RPGClass[] = [
 		special: "+1 i Snacka när du nämner en kändis du träffat eller plats du rest till.",
 		specialAbility: "Snacka",
 		bonus: "En gång per spel kan du överraska med att göra något osjälviskt och rädda någon från att bli skadad.",
+		abilities: {
+			Tåla: 0,
+			Snacka: 0,
+			Göra: 0,
+			Klura: 0,
+			Känna: 0,
+		},
 	},
 	{
 		name: "Musikern",
@@ -83,6 +126,13 @@ export const RPG_CLASSES: RPGClass[] = [
 		special: "+1 i Känna medans 'bra' musik spelas.",
 		specialAbility: "Känna",
 		bonus: "En gång per spel kan du framkalla en minnesbild hos någon med musik.",
+		abilities: {
+			Tåla: 0,
+			Snacka: 0,
+			Göra: 0,
+			Klura: 0,
+			Känna: 0,
+		},
 	},
 	{
 		name: "Emo",
@@ -92,5 +142,12 @@ export const RPG_CLASSES: RPGClass[] = [
 		special: "+1 i Känna när det regnar eller spelas sorglig musik.",
 		specialAbility: "Känna",
 		bonus: "En gång per spel kan du känna något djupt – få en hint, närvaro eller eko från det förflutna.",
+		abilities: {
+			Tåla: 0,
+			Snacka: 0,
+			Göra: 0,
+			Klura: 0,
+			Känna: 0,
+		},
 	},
 ];

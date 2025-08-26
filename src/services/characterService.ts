@@ -60,6 +60,8 @@ export function buildCharacter(options: CharacterOptions): Character {
 		abilities,
 		stress: 0,
 		wounds: "",
+		quote: rpgClass.quote,
+		specialAbility: rpgClass.specialAbility,
 	};
 
 	return character;
