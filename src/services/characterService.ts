@@ -21,7 +21,7 @@ export function buildCharacter(options: CharacterOptions): Character {
 	// Starta en tom lista med alla abilities som finns i spelet (valfritt steg om du vill vara komplett)
 	const abilityMap: Record<AbilityName, number> = {
 		Göra: 0,
-		Tänka: 0,
+		Känna: 0,
 		Snacka: 0,
 		Klura: 0,
 		Tåla: 0,
@@ -38,7 +38,7 @@ export function buildCharacter(options: CharacterOptions): Character {
 	abilityMap[options.flaw] -= 1;
 
 	// Konvertera till Ability[]
-	const abilitys: Ability[] = Object.entries(abilityMap).map(([name, value]) => ({
+	const abilities: Ability[] = Object.entries(abilityMap).map(([name, value]) => ({
 		name: name as AbilityName,
 		value,
 	}));
@@ -52,14 +52,14 @@ export function buildCharacter(options: CharacterOptions): Character {
 		bonusOne: options.bonusOne,
 		flaw: options.flaw,
 
-		inspiration: rpgClass.inspiration,
+		inspo: rpgClass.inspo,
 		gear: rpgClass.gear,
 		special: rpgClass.special,
 		bonus: rpgClass.bonus,
 
-		abilitys,
+		abilities,
 		stress: 0,
-		wounds: [],
+		wounds: "",
 	};
 
 	return character;
