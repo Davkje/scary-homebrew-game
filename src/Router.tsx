@@ -6,28 +6,33 @@ import { Home } from "./pages/Home";
 import { Error } from "./pages/Error";
 import { Layout } from "./pages/Layout/Layout";
 
-export const router = createBrowserRouter([
+export const router = createBrowserRouter(
+	[
+		{
+			path: "/",
+			element: <Layout />,
+			errorElement: <Error />,
+			children: [
+				{
+					path: "/",
+					element: <Home />,
+				},
+				{
+					path: "/about",
+					element: <About />,
+				},
+				{
+					path: "/character",
+					element: <CharacterPage />,
+				},
+				{
+					path: "/create",
+					element: <CreatePage />,
+				},
+			],
+		},
+	],
 	{
-		path: "/",
-		element: <Layout />,
-		errorElement: <Error />,
-		children: [
-			{
-				path: "/",
-				element: <Home />,
-			},
-			{
-				path: "/about",
-				element: <About />,
-			},
-      {
-				path: "/character",
-				element: <CharacterPage />,
-			},
-      {
-				path: "/create",
-				element: <CreatePage />,
-			},
-		],
-	},
-]);
+		basename: import.meta.env.BASE_URL,
+	}
+);
