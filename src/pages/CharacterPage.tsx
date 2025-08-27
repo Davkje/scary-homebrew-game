@@ -37,7 +37,7 @@ export const CharacterPage = () => {
 		const confirmed = window.confirm("Är du säker på att du vill radera din karaktär?");
 		if (confirmed) {
 			localStorage.removeItem("ttrpg_character");
-			navigate("/create");
+			navigate("/");
 		}
 	};
 
@@ -50,7 +50,7 @@ export const CharacterPage = () => {
 	useEffect(() => {
 		if (character) {
 			autoResize(gearInputRef.current);
-      autoResize(woundsInputRef.current);
+			autoResize(woundsInputRef.current);
 		}
 	}, [character]);
 
@@ -76,7 +76,7 @@ export const CharacterPage = () => {
 					className="details-wrapper"
 					style={{
 						maxHeight: detailsOpen
-							? `${(detailsRef.current?.scrollHeight || 0) + 70}px`
+							? `${(detailsRef.current?.scrollHeight || 0) + 120}px`
 							: "0px",
 					}}
 				>
@@ -84,6 +84,9 @@ export const CharacterPage = () => {
 						<p className="quote">"{character.quote}"</p>
 						<h3>Inspiration</h3>
 						<p className="inspo">{character.inspo}</p>
+						<button onClick={handleDeleteCharacter} className="delete-button">
+							Radera karaktär?
+						</button>
 					</div>
 				</div>
 			</div>
@@ -261,12 +264,6 @@ export const CharacterPage = () => {
 					</span>
 				</div>
 				<p>{character.bonus}</p>
-			</div>
-
-			<div className="mid-wrapper">
-				<button onClick={handleDeleteCharacter} className="delete-button">
-					Radera karaktär
-				</button>
 			</div>
 		</>
 	);

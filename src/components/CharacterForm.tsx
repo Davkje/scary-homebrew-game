@@ -54,6 +54,11 @@ export const CharacterForm = () => {
 			flaw,
 		};
 
+    if (localStorage.getItem("ttrpg_character")) {
+      const overwrite = window.confirm("Du har redan en karaktär. Vill du skriva över den?");
+      if (!overwrite) return;
+    }
+
 		localStorage.setItem("ttrpg_character", JSON.stringify(newCharacter));
 		navigate("/character");
 	};
