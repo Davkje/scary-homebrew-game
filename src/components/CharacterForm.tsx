@@ -44,6 +44,7 @@ export const CharacterForm = () => {
 			special: selectedClass.special,
       specialAbility: selectedClass.specialAbility,
 			bonus: selectedClass.bonus,
+      bonusUsed: false,
 			inspo: selectedClass.inspo,
       quote: selectedClass.quote,
 			abilities,

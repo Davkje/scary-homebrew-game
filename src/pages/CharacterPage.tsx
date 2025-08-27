@@ -7,7 +7,6 @@ import { useNavigate } from "react-router";
 export const CharacterPage = () => {
 	//STATES
 	const [character, setCharacter] = useState<Character | null>(null);
-	const [struck, setStruck] = useState(false);
 	const [detailsOpen, setDetailsOpen] = useState(false);
 	const [blinkReminder, setBlinkReminder] = useState(false);
 	const [blinkSpecial, setBlinkSpecial] = useState(false);
@@ -253,15 +252,37 @@ export const CharacterPage = () => {
 				</div>
 			</div>
 
-			<div
-				className={struck ? "left-wrapper clickable struck" : "left-wrapper clickable"}
-				onClick={() => setStruck(!struck)}
-			>
+			<div className={character.bonusUsed ? "left-wrapper struck" : "left-wrapper"}>
 				<div className="header-wrapper">
 					<h3>Bonus</h3>
-					<span className="material-symbols-outlined">
-						{struck ? "check_box" : "check_box_outline_blank"}
-					</span>
+					<div className="check-container">
+						<input
+							className={character.bonusUsed ? "greyed-out" : ""}
+							type="checkbox"
+							name="bonus"
+							id="bonus"
+							checked={character.bonusUsed}
+							onChange={() => (
+								setCharacter({ ...character, bonusUsed: !character.bonusUsed }),
+								localStorage.setItem(
+									"ttrpg_character",
+									JSON.stringify({
+										...character,
+										bonusUsed: !character.bonusUsed,
+									})
+								)
+							)}
+						></input>
+						<span
+							className={
+								character.bonusUsed
+									? "material-symbols-outlined check "
+									: "material-symbols-outlined check invisible"
+							}
+						>
+							check
+						</span>
+					</div>
 				</div>
 				<p>{character.bonus}</p>
 			</div>

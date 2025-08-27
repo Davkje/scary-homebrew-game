@@ -52,6 +52,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  transition: .5s background-color ease-in-out, .5s color;
 
   p {
     text-align: left;
@@ -109,6 +110,7 @@
   align-items: flex-end;
 
   .material-symbols-outlined {
+    font-weight: bold;
     cursor: pointer;
     font-size: 1.2rem;
     color: black;
@@ -120,7 +122,6 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  // padding: 1rem 0;
 
   .ability-container {
     text-transform: uppercase;
@@ -260,5 +261,48 @@ textarea {
     color: white;
     background-color: rgb(255, 21, 21);
     transition: .5s background-color ease-in-out, .5s color;
+  }
+}
+
+
+.check-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  input[type="checkbox"] {
+    // -webkit-appearance: none;
+    // -moz-appearance: none;
+    // appearance: auto;
+    color: black;
+    background: transparent;
+    // background-color: white;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin: 0;
+    border: solid;
+    accent-color: black;
+    border-radius: .25rem;
+    border-width: 3px;
+  }
+
+  input.greyed-out {
+    accent-color: grey;
+    border-color: grey;
+    color: grey;
+  }
+
+  .check {
+    z-index: -1;
+    position: absolute;
+    top: 1px;
+    color: grey;
+    font-weight: bold;
+  }
+
+  .check.invisible {
+    display: none;
   }
 }

@@ -11,6 +11,7 @@ export interface Character {
 	special: string;
   specialAbility: AbilityName;
 	bonus: string;
+  bonusUsed: boolean;
   
 	abilities: Ability[];
   
