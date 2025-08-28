@@ -3,19 +3,36 @@ import { useEffect, useState, useRef } from "react";
 import { loadCharacterFromLocalStorage } from "../services/characterService";
 import type { Character } from "../types/character";
 import { useNavigate } from "react-router";
+import type { AbilityName } from "../types/abilities";
 
 export const CharacterPage = () => {
+	const navigate = useNavigate();
+
 	//STATES
 	const [character, setCharacter] = useState<Character | null>(null);
 	const [detailsOpen, setDetailsOpen] = useState(false);
 	const [blinkReminder, setBlinkReminder] = useState(false);
 	const [blinkSpecial, setBlinkSpecial] = useState(false);
+	const [tempAbilityBoost, setTempAbilityBoost] = useState<null | AbilityName>(null);
 
-	const navigate = useNavigate();
-
+	// REFS
 	const detailsRef = useRef<HTMLDivElement>(null);
+	const BonusInputRef = useRef<HTMLInputElement>(null);
 	const gearInputRef = useRef<HTMLTextAreaElement>(null);
 	const woundsInputRef = useRef<HTMLTextAreaElement>(null);
+
+  // BLINK EFFECT
+	const triggerSpecialEffect = () => {
+		if (character) {
+			setTempAbilityBoost(character.specialAbility);
+			setBlinkReminder(true);
+
+			setTimeout(() => {
+				setTempAbilityBoost(null);
+				setBlinkReminder(false);
+			}, 400); // samma längd som blinkningen
+		}
+	};
 
 	// RESIZE FUNK FOR TEXTAREA
 	const autoResize = (el: HTMLTextAreaElement | null) => {
@@ -31,7 +48,7 @@ export const CharacterPage = () => {
 		el.style.height = newHeight + "px";
 	};
 
-	// DELETE CHARACTER FUNCTION
+	// DELETE CHARACTER
 	const handleDeleteCharacter = () => {
 		const confirmed = window.confirm("Är du säker på att du vill radera din karaktär?");
 		if (confirmed) {
@@ -93,46 +110,51 @@ export const CharacterPage = () => {
 			<div className="mid-wrapper">
 				<h3>Förmågor</h3>
 				<div className="abilitys">
-					{character.abilities.map((a) => (
-						<div
-							className="ability-container"
-							key={a.name}
-							onClick={() => {
-								if (a.name === character.specialAbility) {
-									setBlinkSpecial(true);
-									setTimeout(() => setBlinkSpecial(false), 400);
-								}
-							}}
-						>
-							{a.name}
-							<div className="ability">
-								{" "}
-								<span
-									className={`reminder ${
-										a.name === character.specialAbility && blinkReminder
-											? "blink"
-											: ""
-									}`}
-									style={{
-										display:
-											a.name === character.specialAbility
-												? "inline-block"
-												: "none",
-									}}
-								></span>
-								{a.value}
+					{character.abilities.map((a) => {
+						const isSpecial = a.name === character.specialAbility;
+						const displayValue = tempAbilityBoost === a.name ? a.value + 1 : a.value;
+
+						return (
+							<div
+								className="ability-container"
+								key={a.name}
+								onClick={() => {
+									if (isSpecial) {
+										setBlinkSpecial(true);
+										setTimeout(() => setBlinkSpecial(false), 400);
+									}
+								}}
+							>
+								<h4>{a.name}</h4>
+								<div className="ability">
+									<span
+										className={`reminder ${
+											isSpecial && blinkReminder ? "blink" : ""
+										}`}
+										style={{
+											display: isSpecial ? "inline-block" : "none",
+										}}
+										onClick={triggerSpecialEffect}
+									></span>
+									<span
+										className={
+											isSpecial && blinkReminder
+												? "blink ability-mod"
+												: "ability-mod"
+										}
+									>
+										{displayValue}
+									</span>
+								</div>
 							</div>
-						</div>
-					))}
+						);
+					})}
 				</div>
 			</div>
 
 			<div
 				className="mid-wrapper special"
-				onClick={() => {
-					setBlinkReminder(true);
-					setTimeout(() => setBlinkReminder(false), 400);
-				}}
+				onClick={triggerSpecialEffect} // <--- använd samma funktion här
 			>
 				<h3 className={`special-title ${blinkSpecial ? "blink" : ""}`}>Specialare</h3>
 				<p>
@@ -254,29 +276,33 @@ export const CharacterPage = () => {
 
 			<div className={character.bonusUsed ? "left-wrapper struck" : "left-wrapper"}>
 				<div className="header-wrapper">
-					<h3>Bonus</h3>
+					<h3 className="clickable" onClick={() => BonusInputRef.current?.click()}>
+						Bonus
+					</h3>
 					<div className="check-container">
 						<input
+							ref={BonusInputRef}
 							className={character.bonusUsed ? "greyed-out" : ""}
 							type="checkbox"
 							name="bonus"
 							id="bonus"
 							checked={character.bonusUsed}
-							onChange={() => (
-								setCharacter({ ...character, bonusUsed: !character.bonusUsed }),
+							onChange={() => {
+								const newValue = !character.bonusUsed;
+								setCharacter({ ...character, bonusUsed: newValue });
 								localStorage.setItem(
 									"ttrpg_character",
 									JSON.stringify({
 										...character,
-										bonusUsed: !character.bonusUsed,
+										bonusUsed: newValue,
 									})
-								)
-							)}
-						></input>
+								);
+							}}
+						/>
 						<span
 							className={
 								character.bonusUsed
-									? "material-symbols-outlined check "
+									? "material-symbols-outlined check"
 									: "material-symbols-outlined check invisible"
 							}
 						>
