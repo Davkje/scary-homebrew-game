@@ -13,7 +13,13 @@
   font-weight: 400;
 
   color: rgb(0, 0, 0);
-  background-color: #ffffff;
+  // background-color: #cc2d2d;
+  background-image: url(../assets/paper_2.png);
+  background-size: cover;
+  /* Gör så bilden täcker hela ytan */
+  background-repeat: no-repeat;
+  background-position: center center;
+  /* Undvik upprepning */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -66,10 +72,8 @@ h3 {
 }
 
 h4 {
-  // color: rgb(22, 38, 141);
   margin: .5rem;
   font-weight: bold;
-  // font-size: 1rem;
 }
 
 label {
@@ -86,17 +90,23 @@ select {
   -moz-appearance: none;
   appearance: none;
   color: black;
-  background: white;
-  background-color: white;
-  font-family: inherit;
+  background: transparent;
+  background-color: transparent;
+  font-family: Schoolbell,  Kadwa, Arial, sans-serif;
   text-transform: uppercase;
-  font-size: clamp(1rem, 4vw, 1.2rem);
+  font-size: clamp(1.4rem, 6vw, 1.6rem);
+  // font-weight: bold;
   border: none;
   border-bottom: solid black 3px;
   border-radius: 0;
   accent-color: black;
   padding: .2rem;
   margin-top: 1rem;
+  &::placeholder {
+    color: rgba(100, 85, 69, 0.576);
+  }
+
+
 }
 
 button {
@@ -105,8 +115,8 @@ button {
   appearance: none;
   accent-color: black;
   color: black;
-  background: white;
-  background-color: white;
+  background: transparent;
+  background-color: transparent;
   text-transform: uppercase;
   border: 3px solid black;
   padding: 0.6em 1.2em;
@@ -118,7 +128,7 @@ button {
   cursor: pointer;
 
   &:hover {
-    background-color: rgb(220, 220, 220);
+    background-color: rgba(255, 255, 255, 0.467);
   }
 }
 
@@ -131,9 +141,10 @@ textarea:focus,
 textarea:focus,
 select:focus,
 select:focus {
-  outline: auto 4px rgb(43, 77, 212);
+  outline: solid rgb(0, 0, 0) 3px;
+  outline-offset: .25rem;
   box-shadow: none;
-  border-color: rgb(0, 0, 0);
+
 }
 
 .btn {
@@ -142,13 +153,12 @@ select:focus {
   appearance: none;
   accent-color: black;
   color: black;
-  background: white;
-  background-color: white;
+  background: transparent;
+  background-color: transparent;
   text-transform: uppercase;
   border: 3px solid black;
   padding: 0.6em 1.2em;
-  margin-top: .5rem;
-  font-size: 1.1em;
+  font-size: 1.6rem;
   font-family: inherit;
   border-radius: 0.5rem;
   transition: background-color 0.25s;
@@ -156,7 +166,7 @@ select:focus {
 
   &:hover {
     color: black;
-    background-color: rgb(220, 220, 220);
+    background-color: rgba(255, 255, 255, 0.467);
   }
 }
 

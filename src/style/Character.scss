@@ -212,13 +212,13 @@ strong {
     margin: 0;
 
     .stress-point {
-      background-color: rgb(220, 220, 220);
+      background-color: rgba(0, 0, 0, 0.106);
       border-radius: .25rem;
       transition: background-color 0.3s ease-in-out;
     }
 
     .stress-point.filled {
-      background-color: black;
+      background-color: rgb(0, 0, 0);
     }
   }
 }
@@ -260,18 +260,19 @@ textarea {
 
 .delete-button {
   color: grey;
-  border-color: white;
+  border: none;
   font-size: 1rem;
   border-radius: .5rem;
   margin: 0;
+  transition: .5s background-color ease-in-out, .5s color ease, scale .5s ease;
 
   &:hover {
-    color: white;
-    background-color: rgb(255, 21, 21);
-    transition: .5s background-color ease-in-out, .5s color;
+    color: rgb(207, 43, 43);
+    background-color: transparent;
+    scale: 1.1;
+    transition: .5s background-color ease-in-out, .5s color ease, scale .5s ease;
   }
 }
-
 
 .check-container {
   display: flex;
@@ -280,12 +281,8 @@ textarea {
   position: relative;
 
   input[type="checkbox"] {
-    // -webkit-appearance: none;
-    // -moz-appearance: none;
-    // appearance: auto;
     color: black;
     background: transparent;
-    // background-color: white;
     width: 20px;
     height: 20px;
     cursor: pointer;

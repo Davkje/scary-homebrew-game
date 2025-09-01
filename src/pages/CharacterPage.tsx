@@ -30,7 +30,7 @@ export const CharacterPage = () => {
 			setTimeout(() => {
 				setTempAbilityBoost(null);
 				setBlinkReminder(false);
-			}, 400); // samma längd som blinkningen
+			}, 600); // samma längd som blinkningen
 		}
 	};
 

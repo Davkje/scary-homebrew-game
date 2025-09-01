@@ -5,19 +5,17 @@ nav {
   justify-content: space-between;
   align-items: center;
 
-  h3 {
-    font-size: 1rem;
-    letter-spacing: -1px;
-    text-align: left;
-    font-weight: 600;
-    a {
-      color: var(--color-heading);
-    }
+  a {
+    color: var(--color-heading);
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   ul {
     display: flex;
     gap: .5rem;
+
     li {
       text-transform: uppercase;
     }

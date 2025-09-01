@@ -5,9 +5,10 @@ import { NavLink } from "react-router";
 export const Navigation = () => {
 	return (
 		<nav>
-			<h3>
-				<NavLink to={"/"}>Hem</NavLink>
-			</h3>
+			<NavLink to={"/"}>
+				<span className="material-symbols-outlined">home</span>
+			</NavLink>
+
 			<ul>
 				<li>
 					<NavLink to={"/character"}>Karaktär</NavLink>
@@ -16,7 +17,7 @@ export const Navigation = () => {
 					<NavLink to={"/create"}>Skapa</NavLink>
 				</li>
 				<li>
-					<NavLink to={"/info"}>INFO</NavLink>
+					<NavLink to={"/info"}>Info</NavLink>
 				</li>
 			</ul>
 		</nav>
