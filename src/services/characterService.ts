@@ -51,6 +51,7 @@ export function buildCharacter(options: CharacterOptions): Character {
 		wounds: "",
 		quote: rpgClass.quote,
 		specialAbility: rpgClass.specialAbility,
+		bonusUsed: false, // Add this line to satisfy the Character type
 	};
 
 	return character;
