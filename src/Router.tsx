@@ -30,14 +30,14 @@ export const router = createBrowserRouter(
 					path: "/create",
 					element: <CreatePage />,
 				},
-        {
+				{
 					path: "/info",
-					element: <InfoPage/>,
+					element: <InfoPage />,
 				},
 			],
 		},
 	],
 	{
-		basename: import.meta.env.BASE_URL, // GITHUB PAGES VILL HA REPO NAMNET INNAN VARJE ROUTS NAMN
+		basename: import.meta.env.DEV ? "" : "scary_homebrew_game/", // TOM I DEV MODE : REPO NAME ANNARS
 	}
 );
