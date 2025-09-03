@@ -3,7 +3,7 @@ import { CharacterPage } from "./pages/CharacterPage";
 import { CreatePage } from "./pages/CreatePage";
 import { About } from "./pages/About";
 import { Home } from "./pages/Home";
-// import { Error } from "./pages/Error";
+import { Error } from "./pages/Error";
 import { Layout } from "./pages/Layout/Layout";
 import { InfoPage } from "./pages/InfoPage";
 
@@ -12,7 +12,7 @@ export const router = createBrowserRouter(
 		{
 			path: "/",
 			element: <Layout />,
-			// errorElement: <Error />,
+			errorElement: <Error />,
 			children: [
 				{
 					path: "/",
