@@ -10,13 +10,29 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   gap: 1rem;
+  position: relative;
 
-  p {
-    margin-bottom: 2rem;
+  h1 {
+    font-size: clamp(3rem, 10vw, 6rem);
+    position: fixed;
   }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+
+    p {
+      margin-bottom: 1.5rem;
+      font-size: clamp(1.3rem, 2vw, 1.5rem);
+      max-width: 700px;
+    }
+  }
+
 }
 
 form {

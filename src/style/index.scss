@@ -31,6 +31,7 @@ a {
   font-weight: 500;
   color: black;
   text-decoration: inherit;
+  border-radius: .25rem;
 }
 
 a:hover {
@@ -55,13 +56,12 @@ label {
 }
 
 h1 {
-  font-size: 1.8rem;
-  // margin: .2rem;
+  font-size: clamp(1.8rem, 5vw, 3rem);
   font-weight: bold;
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: bold;
 }
 
