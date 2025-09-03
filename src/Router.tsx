@@ -33,6 +33,8 @@ export const router = createBrowserRouter(
 		},
 	],
 	{
-		basename: import.meta.env.DEV ? "scary-homebrew-game/" : "scary-homebrew-game/", // TOM I DEV MODE : REPO NAME ANNARS
-	}
+  basename: import.meta.env.DEV 
+    ? "/"                     // när du kör lokalt
+    : "/scary-homebrew-game" // när du deployar
+}
 );
