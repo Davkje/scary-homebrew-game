@@ -35,6 +35,6 @@ export const router = createBrowserRouter(
 	{
 		basename: import.meta.env.DEV
 			? "/" // när du kör lokalt
-			: "scary-homebrew-game", // när du deployar
+			: "scary-homebrew-game/", // när du deployar
 	}
 );
