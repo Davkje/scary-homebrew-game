@@ -11,15 +11,7 @@
   font-family: Kadwa, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   color: rgb(0, 0, 0);
-  // background-color: #cc2d2d;
-  background-image: url(../assets/paper_2.png);
-  background-size: cover;
-  /* Gör så bilden täcker hela ytan */
-  background-repeat: no-repeat;
-  background-position: center center;
-  /* Undvik upprepning */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -42,6 +34,10 @@ body {
   width: 100vw;
   min-height: 100vh;
   margin: 0;
+  background-image: url(../assets/paper_2.png);
+  background-repeat: repeat-y;
+  background-position: center top;
+  background-size: 100% auto;
 }
 
 h1,
@@ -76,8 +72,12 @@ h4 {
   font-weight: bold;
 }
 
+p {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
 label {
-  font-size: 1.1rem;
+  font-size: clamp(1.1rem, 4vw, 1.4rem);
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -92,7 +92,7 @@ select {
   color: black;
   background: transparent;
   background-color: transparent;
-  font-family: Schoolbell,  Kadwa, Arial, sans-serif;
+  font-family: Schoolbell, Kadwa, Arial, sans-serif;
   text-transform: uppercase;
   font-size: clamp(1.4rem, 6vw, 1.6rem);
   // font-weight: bold;
@@ -102,11 +102,10 @@ select {
   accent-color: black;
   padding: .2rem;
   margin-top: 1rem;
+
   &::placeholder {
     color: rgba(100, 85, 69, 0.576);
   }
-
-
 }
 
 button {
@@ -121,7 +120,7 @@ button {
   border: 3px solid black;
   padding: 0.6em 1.2em;
   margin-top: 1rem;
-  font-size: 1.1em;
+  font-size: clamp(1.1rem, 4vw, 1.4rem);
   font-family: inherit;
   border-radius: 0.5rem;
   transition: background-color 0.25s;
@@ -172,6 +171,7 @@ select:focus {
 
 ul {
   padding: 0;
+  font-size: clamp(1rem, 2vw, 1.2rem);
 
   li {
     list-style: none;
