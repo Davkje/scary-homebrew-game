@@ -4,6 +4,16 @@
   align-items: center;
   flex-direction: column;
   text-align: center;
+  background-image: url(../assets/paper_2.png);
+  background-color: var(--c-bg-2);
+  background-repeat: repeat-y;
+  background-position: center top;
+  background-size: 100% auto;
+  background-blend-mode: screen;
+}
+
+body.dark #root {
+  background-blend-mode: overlay;
 }
 
 .home-section {
@@ -43,6 +53,7 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  align-items: center;
   gap: 2rem;
 }
 
@@ -68,7 +79,7 @@ form {
   text-align: start;
   padding: 1rem;
   border-radius: .5rem;
-  border: solid var(--c-text-light-1) 3px;
+  border: solid var(--c-text-1) 3px;
 
   .quote {
     margin: 0;

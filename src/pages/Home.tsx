@@ -4,6 +4,7 @@ export const Home = () => {
 	return (
 		<section className="home-section">
 			<h1>Välkommen!</h1>
+
 			<div>
 				<p>
 					Här kan du skapa en karaktär till Davids enkla skräck-rollspel på ett par

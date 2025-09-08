@@ -7,17 +7,17 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-
 /* Color palette */
 :root {
   --c-white: #ffffff;
-  --c-white-soft: #e6e6e6;
-  --c-white-trans: rgba(255, 255, 255, 0.3);
+  --c-white-soft: #fbfbfb;
+  --c-white-mute: #c3c3c3;
+  --c-white-trans: rgba(255, 255, 255, 0.062);
 
   --c-black: #151515;
-  --c-black-soft: #1a1a1a;
-  --c-black-mute: #5e5e5e;
-  --c-black-trans: rgba(0, 0, 0, 0.3);
+  --c-black-soft: #1f1f1f;
+  --c-black-mute: #202020;
+  --c-black-trans: rgba(0, 0, 0, 0.222);
 
   --c-red: rgb(207, 43, 43);
 
@@ -25,7 +25,7 @@
   --c-text-light-1: var(--c-black);
   --c-text-light-2: var(--c-black-mute);
 
-  --c-text-dark-1: var(--c-white);
+  --c-text-dark-1: var(--c-white-soft);
   --c-text-dark-2: var(--c-white-mute);
 
   // Dividers
@@ -38,18 +38,40 @@
 
   // Background
   --c-bg-light-1: var(--c-white);
-  --c-bg-light-2: var(--c-white-mute);
+  --c-bg-light-2: rgba(208, 207, 198, 0.596); // Screen
 
   --c-bg-dark-1: var(--c-black);
-  --c-bg-dark-2: var(--c-black-mute);
+  --c-bg-dark-2: rgba(0, 0, 0, 0.949); // Overlay
+}
+
+:root {
+  --c-bg-1: var(--c-bg-light-1);
+  --c-bg-2: var(--c-bg-light-2);
+  --c-text-1: var(--c-text-light-1);
+  --c-text-2: var(--c-text-light-2);
+  --c-out: var(--c-out-light);
+  --c-div: var(--c-div-light);
+  --c-trans-1: var(--c-black-trans);
+  --c-trans-2: var(--c-white-trans);
+}
+
+.dark {
+  --c-bg-1: var(--c-bg-dark-1);
+  --c-bg-2: var(--c-bg-dark-2);
+  --c-text-1: var(--c-text-dark-1);
+  --c-text-2: var(--c-text-dark-2);
+  --c-out: var(--c-out-dark);
+  --c-div: var(--c-div-dark);
+  --c-trans-1: var(--c-white-trans);
+  --c-trans-2: var(--c-black-trans);
 }
 
 :root {
   font-family: Kadwa, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  background-color: var(--c-bg-light-1);
-  color: var(--c-text-light-1);
+  background-color: var(--c-bg-1);
+  color: var(--c-text-1);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -61,13 +83,8 @@ body {
   width: 100vw;
   min-height: 100vh;
   margin: 0;
-  background-image: url(../assets/paper_2.png);
-  background-repeat: repeat-y;
-  background-position: center top;
-  background-size: 100% auto;
-
-  background-color: var(--c-bg-light-2);
-  background-blend-mode: screen;
+  background-color: var(--c-bg-1);
+  color: var(--c-text-1);
 }
 
 h1,
@@ -108,11 +125,13 @@ p {
 
 a {
   font-weight: 500;
-  color: var(--c-text-light-1);
+  color: var(--c-text-1);
   text-decoration: none;
+  border-radius: .25rem;
 }
 
 label {
+  width: 100%;
   font-size: clamp(1.1rem, 4vw, 1.4rem);
   display: flex;
   flex-direction: column;
@@ -122,24 +141,25 @@ label {
 input,
 textarea,
 select {
+  width: 100%;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  color: var(--c-text-light-1);
+  color: var(--c-text-1);
   background: transparent;
   background-color: transparent;
   font-family: Schoolbell, Kadwa, Arial, sans-serif;
   text-transform: uppercase;
   font-size: clamp(1.4rem, 6vw, 1.6rem);
   border: none;
-  border-bottom: solid var(--c-text-light-1) 3px;
+  border-bottom: solid var(--c-text-1) 3px;
   border-radius: 0;
-  accent-color: var(--c-text-light-1);
+  accent-color: var(--c-text-1);
   padding: .2rem;
   margin-top: 1rem;
 
   &::placeholder {
-    color: var(--c-black-trans);
+    color: var(--c-div);
   }
 }
 
@@ -147,12 +167,12 @@ button {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  accent-color: var(--c-text-light-1);
-  color: var(--c-text-light-1);
+  accent-color: var(--c-text-1);
+  color: var(--c-text-1);
   background: transparent;
   background-color: transparent;
   text-transform: uppercase;
-  border: 3px solid var(--c-text-light-1);
+  border: 3px solid var(--c-text-1);
   padding: 0.6em 1.2em;
   margin-top: 1rem;
   font-size: clamp(1.1rem, 4vw, 1.4rem);
@@ -162,7 +182,7 @@ button {
   cursor: pointer;
 
   &:hover {
-    background-color: var(--c-white-trans);
+    background-color: var(--c-trans-1);
   }
 }
 
@@ -176,7 +196,7 @@ textarea:focus,
 textarea:focus,
 select:focus,
 select:focus {
-  outline: solid var(--c-out-light) 2px;
+  outline: solid var(--c-out) 2px;
   box-shadow: none;
 }
 
@@ -184,12 +204,12 @@ select:focus {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  accent-color: var(--c-text-light-1);
-  color: var(--c-text-light-1);
+  accent-color: var(--c-text-1);
+  color: var(--c-text-1);
   background: transparent;
   background-color: transparent;
   text-transform: uppercase;
-  border: 3px solid var(--c-text-light-1);
+  border: 3px solid var(--c-text-1);
   padding: 0.6em 1.2em;
   font-size: 1.6rem;
   font-family: inherit;
@@ -198,8 +218,8 @@ select:focus {
   cursor: pointer;
 
   &:hover {
-    color: var(--c-text-light-1);
-    background-color: var(--c-white-trans);
+    color: var(--c-text-1);
+    background-color: var(--c-trans-1);
   }
 }
 
