@@ -7,11 +7,49 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+
+/* Color palette */
+:root {
+  --c-white: #ffffff;
+  --c-white-soft: #e6e6e6;
+  --c-white-trans: rgba(255, 255, 255, 0.3);
+
+  --c-black: #151515;
+  --c-black-soft: #1a1a1a;
+  --c-black-mute: #5e5e5e;
+  --c-black-trans: rgba(0, 0, 0, 0.3);
+
+  --c-red: rgb(207, 43, 43);
+
+  // Text
+  --c-text-light-1: var(--c-black);
+  --c-text-light-2: var(--c-black-mute);
+
+  --c-text-dark-1: var(--c-white);
+  --c-text-dark-2: var(--c-white-mute);
+
+  // Dividers
+  --c-div-light: rgba(80, 80, 80, .25);
+  --c-div-dark: rgba(130, 130, 130, 0.7);
+
+  // Outline
+  --c-out-light: rgba(47, 47, 47, 0.413);
+  --c-out-dark: rgba(130, 130, 130, 0.7);
+
+  // Background
+  --c-bg-light-1: var(--c-white);
+  --c-bg-light-2: var(--c-white-mute);
+
+  --c-bg-dark-1: var(--c-black);
+  --c-bg-dark-2: var(--c-black-mute);
+}
+
 :root {
   font-family: Kadwa, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  color: rgb(0, 0, 0);
+  background-color: var(--c-bg-light-1);
+  color: var(--c-text-light-1);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -28,8 +66,7 @@ body {
   background-position: center top;
   background-size: 100% auto;
 
-
-  background-color: rgba(255, 250, 230, 0.575);
+  background-color: var(--c-bg-light-2);
   background-blend-mode: screen;
 }
 
@@ -71,7 +108,7 @@ p {
 
 a {
   font-weight: 500;
-  color: black;
+  color: var(--c-text-light-1);
   text-decoration: none;
 }
 
@@ -88,21 +125,21 @@ select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  color: black;
+  color: var(--c-text-light-1);
   background: transparent;
   background-color: transparent;
   font-family: Schoolbell, Kadwa, Arial, sans-serif;
   text-transform: uppercase;
   font-size: clamp(1.4rem, 6vw, 1.6rem);
   border: none;
-  border-bottom: solid black 3px;
+  border-bottom: solid var(--c-text-light-1) 3px;
   border-radius: 0;
-  accent-color: black;
+  accent-color: var(--c-text-light-1);
   padding: .2rem;
   margin-top: 1rem;
 
   &::placeholder {
-    color: rgba(100, 85, 69, 0.576);
+    color: var(--c-black-trans);
   }
 }
 
@@ -110,12 +147,12 @@ button {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  accent-color: black;
-  color: black;
+  accent-color: var(--c-text-light-1);
+  color: var(--c-text-light-1);
   background: transparent;
   background-color: transparent;
   text-transform: uppercase;
-  border: 3px solid black;
+  border: 3px solid var(--c-text-light-1);
   padding: 0.6em 1.2em;
   margin-top: 1rem;
   font-size: clamp(1.1rem, 4vw, 1.4rem);
@@ -125,7 +162,7 @@ button {
   cursor: pointer;
 
   &:hover {
-    background-color: rgba(255, 255, 255, 0.467);
+    background-color: var(--c-white-trans);
   }
 }
 
@@ -139,21 +176,20 @@ textarea:focus,
 textarea:focus,
 select:focus,
 select:focus {
-  outline: solid rgba(0, 0, 0, 0.169) 2px;
+  outline: solid var(--c-out-light) 2px;
   box-shadow: none;
-  // outline-offset: 0;
 }
 
 .btn {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  accent-color: black;
-  color: black;
+  accent-color: var(--c-text-light-1);
+  color: var(--c-text-light-1);
   background: transparent;
   background-color: transparent;
   text-transform: uppercase;
-  border: 3px solid black;
+  border: 3px solid var(--c-text-light-1);
   padding: 0.6em 1.2em;
   font-size: 1.6rem;
   font-family: inherit;
@@ -162,8 +198,8 @@ select:focus {
   cursor: pointer;
 
   &:hover {
-    color: black;
-    background-color: rgba(255, 255, 255, 0.467);
+    color: var(--c-text-light-1);
+    background-color: var(--c-white-trans);
   }
 }
 
