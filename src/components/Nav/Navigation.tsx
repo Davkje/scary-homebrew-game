@@ -6,18 +6,18 @@ export const Navigation = () => {
 	return (
 		<nav>
 			<NavLink to={"/"}>
-				<span className="material-symbols-outlined">home</span>
+				<span className="material-symbols-outlined navLink">home</span>
 			</NavLink>
 
 			<ul>
 				<li>
-					<NavLink to={"/character"}>Karaktär</NavLink>
+					<NavLink to={"/character"} className={"navLink"}>Karaktär</NavLink>
 				</li>
 				<li>
-					<NavLink to={"/create"}>Skapa</NavLink>
+					<NavLink to={"/create"} className={"navLink"}>Skapa</NavLink>
 				</li>
 				<li>
-					<NavLink to={"/info"}>Info</NavLink>
+					<NavLink to={"/info"} className={"navLink"}>Info</NavLink>
 				</li>
 			</ul>
 		</nav>
