@@ -1,19 +1,32 @@
 #root {
+  position: relative;
   min-height: 100vh;
   display: flex;
   align-items: center;
   flex-direction: column;
   text-align: center;
-  background-image: url(../assets/paper_2.png);
-  background-color: var(--c-bg-2);
-  background-repeat: repeat-y;
-  background-position: center top;
-  background-size: 100% auto;
-  background-blend-mode: screen;
+  background-color: var(--c-bg-2); // basfärgen
+  overflow: hidden; // så att inte ::after sticker ut
 }
 
-body.dark #root {
-  background-blend-mode: overlay;
+#root::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url(../assets/paper_2.png) center top / 100% auto repeat-y;
+  opacity: 0.9; // <-- justera här för mer/mindre synlig bild
+  mix-blend-mode: lighten;
+  pointer-events: none;
+  z-index: 0;
+}
+
+body.dark #root::after {
+  mix-blend-mode: color-burn; /* byter blend-mode i dark mode */
+}
+
+#root > * {
+  position: relative;
+  z-index: 1; // innehållet ovanpå bilden
 }
 
 .home-section {

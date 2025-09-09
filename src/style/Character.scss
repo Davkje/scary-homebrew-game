@@ -247,12 +247,12 @@ textarea {
 
 .clickable {
   cursor: pointer;
-  transition: .5s background-color ease-in-out, .5s color;
+  transition: .3s background-color ease-in-out, .3s color;
 }
 
 .struck {
   color: var(--c-trans-1);
-  transition: .5s background-color ease-in-out, .5s color;
+  transition: .3s background-color ease-in-out, .3s color;
   // text-decoration: line-through;
   // text-decoration-thickness: 2px;
 
